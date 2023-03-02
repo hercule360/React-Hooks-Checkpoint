@@ -12,16 +12,21 @@ function App() {
 
   const [inputSearch, setInputSearch] = useState('')
 
+  const [inputStars , setInputStars] = useState(0)
+
 const add= (newmovie) =>{
   setMovies([...movies, newmovie])
 }
   return (
     <div className="App">
 
-    <Navigation/> 
-    <Filter  inputSearch={inputSearch} setInputSearch= {setInputSearch}/>
+    <Navigation inputSearch={inputSearch} setInputSearch= {setInputSearch} 
+    inputStars={inputStars} setInputStars={setInputStars}/> 
+    <Filter  inputSearch={inputSearch} setInputSearch= {setInputSearch}
+     inputStars={inputStars} setInputStars={setInputStars}/>
     <AddMovie  add={add}/>
-    <MovieList movies = {movies} inputSearch={inputSearch} />
+    <MovieList movies = {movies} inputSearch={inputSearch} 
+    inputStars={inputStars}  />
      
       
       
